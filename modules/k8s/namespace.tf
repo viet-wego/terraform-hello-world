@@ -1,6 +1,6 @@
 resource "kubernetes_namespace" "infra" {
   metadata {
-    name = "inra"
+    name = "infra"
   }
 }
 

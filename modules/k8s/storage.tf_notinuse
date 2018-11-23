@@ -5,7 +5,7 @@ resource "kubernetes_persistent_volume" "jenkins" {
 
   spec {
     capacity {
-      storage = "64Gi"
+      storage = "63Gi"
     }
 
     access_modes = ["ReadWriteMany"]
@@ -30,7 +30,7 @@ resource "kubernetes_persistent_volume_claim" "jenkins" {
 
     resources {
       requests {
-        storage = "64Gi"
+        storage = "63Gi"
       }
     }
 

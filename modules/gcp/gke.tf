@@ -5,6 +5,11 @@ variable "node_count" {
 resource "google_container_cluster" "jenkins" {
   name               = "jenkins-cluster"
   initial_node_count = "${var.node_count}"
+
+  master_auth {
+    username = "${var.cluster_user}"
+    password = "${var.cluster_pwd}"
+  }
 }
 
 output "cluster_endpoint" {

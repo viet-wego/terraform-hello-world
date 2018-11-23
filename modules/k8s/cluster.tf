@@ -17,6 +17,7 @@ resource "kubernetes_cluster_role_binding" "jenkins" {
   }
 
   subject {
+    api_group = ""
     kind      = "ServiceAccount"
     name      = "${kubernetes_service_account.jenkins.metadata.0.name}"
     namespace = "${kubernetes_namespace.infra.metadata.0.name}"

@@ -89,9 +89,7 @@ resource "kubernetes_deployment" "jenkins-master" {
         volume {
           name = "${var.volume_name}"
 
-          persistent_volume_claim {
-            claim_name = "${kubernetes_persistent_volume_claim.jenkins.metadata.0.name}"
-          }
+          empty_dir {}
         }
       }
     }
