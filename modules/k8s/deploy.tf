@@ -21,8 +21,8 @@ resource "kubernetes_deployment" "jenkins-master" {
       type = "RollingUpdate"
 
       rolling_update {
-        max_surge       = "1"
-        max_unavailable = "0"
+        max_surge       = 1
+        max_unavailable = 0
       }
     }
 
@@ -40,11 +40,11 @@ resource "kubernetes_deployment" "jenkins-master" {
 
           port = [
             {
-              container_port = "8080"
+              container_port = 8080
               protocol       = "TCP"
             },
             {
-              container_port = "50000"
+              container_port = 50000
               protocol       = "TCP"
             },
           ]
@@ -55,14 +55,14 @@ resource "kubernetes_deployment" "jenkins-master" {
           }
 
           readiness_probe {
-            failure_threshold = "5"
-            success_threshold = "2"
-            timeout_seconds   = "5"
-            period_seconds    = "10"
+            failure_threshold = 5
+            success_threshold = 2
+            timeout_seconds   = 5
+            period_seconds    = 10
 
             http_get {
               path = "/login"
-              port = "8080"
+              port = 8080
             }
           }
 

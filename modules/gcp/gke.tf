@@ -18,3 +18,7 @@ output "cluster_username" {
 output "cluster_password" {
   value = "${google_container_cluster.jenkins.master_auth.0.password}"
 }
+
+output "cluster_ca_cert" {
+  value = "${base64decode(google_container_cluster.jenkins.master_auth.0.cluster_ca_certificate)}"
+}
