@@ -40,7 +40,11 @@ Then run:
         terraform apply myplan
 
 Wait for Terraform to bring the thing up.
-After finished, find your Google Static IP Address named `jenkins-master-static`
-You can access your Jenkins at: `[your-static-ip-address]:8080`
-User: `admin`
-Pwd: `Iamnoone`
+After finished, run this to see your Jenkins URL:
+
+    terraform output
+
+You can access your Jenkins with
+
+    User: admin
+    Pwd: Iamnoone

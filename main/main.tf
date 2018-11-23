@@ -23,3 +23,7 @@ module "k8s" {
   gce_disk   = "${module.gcp.disk}"
   jenkins_ip = "${module.gcp.static_address}"
 }
+
+output "jenkins-url" {
+  value = "${module.gcp.static_address}:8080"
+}
