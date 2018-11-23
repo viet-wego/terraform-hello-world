@@ -1,13 +1,17 @@
 variable "key_file" {}
 variable "project" {}
 variable "zone" {}
+variable "cluster_user" {}
+variable "cluster_pwd" {}
 
 module "gcp" {
   source = "../modules/gcp"
 
-  key_file = "${var.key_file}"
-  project  = "${var.project}"
-  zone     = "${var.zone}"
+  key_file     = "${var.key_file}"
+  project      = "${var.project}"
+  zone         = "${var.zone}"
+  cluster_user = "${var.cluster_user}"
+  cluster_pwd  = "${var.cluster_pwd}"
 }
 
 module "k8s" {
