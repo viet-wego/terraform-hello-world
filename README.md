@@ -29,6 +29,8 @@ Create a `myvars.tfvars` in the main directory with content:
         key_file = "path/to/your/private_key"
         project = "your-google-project-id"
         zone = "your-compute-zone"
+        cluster_user = "your-k8s-user"
+        cluster_pwd = "your-k8s-password"
 
 Then run:
 
@@ -37,3 +39,8 @@ Then run:
         terraform plan -var-file myvars.tfvars -out myplan
         terraform apply myplan
 
+Wait for Terraform to bring the thing up.
+After finished, find your Google Static IP Address named `jenkins-master-static`
+You can access your Jenkins at: `[your-static-ip-address]:8080`
+User: `admin`
+Pwd: `Iamnoone`

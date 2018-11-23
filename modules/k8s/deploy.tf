@@ -35,7 +35,7 @@ resource "kubernetes_deployment" "jenkins-master" {
 
       spec {
         container {
-          image = "jenkins/jenkins:2.138.2"
+          image = "viettd/jenkins-master:0.0.1-beta"
           name  = "${var.jenkins_name}"
 
           port = [
